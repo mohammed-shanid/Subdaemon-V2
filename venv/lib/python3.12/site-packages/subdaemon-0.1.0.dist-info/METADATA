@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: subdaemon
+Version: 0.1.0
+Requires-Dist: rich
+Requires-Dist: aiohttp
+Requires-Dist: aiodns
+Dynamic: requires-dist

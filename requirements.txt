@@ -1,0 +1,39 @@
+# SubDaemon v2 — Requirements
+# ─────────────────────────────────────────────────────────────────────────────
+# Install tiers:
+#
+#   Minimal (always works, slower):
+#     pip install requests urllib3
+#
+#   Recommended (async, fast, pretty UI):
+#     pip install -r requirements.txt
+#
+#   One-liner full install:
+#     pip install subdaemon[full]
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Core (always required) ───────────────────────────────────────────────────
+requests>=2.28.0
+urllib3>=2.0.0
+
+# ── Async DNS — aiodns (STRONGLY recommended) ────────────────────────────────
+# 10x faster than dnspython, uses libcares under the hood
+# Ubuntu/Debian: apt install libc-ares-dev
+# macOS:         brew install c-ares
+aiodns>=3.1.0
+
+# ── Async DNS — dnspython (fallback if aiodns unavailable) ───────────────────
+# Used automatically if aiodns is not installed
+dnspython>=2.4.0
+
+# ── Async HTTP — aiohttp (STRONGLY recommended) ──────────────────────────────
+# 5x faster than requests, true async connection pooling
+aiohttp>=3.9.0
+
+# ── Async file I/O ───────────────────────────────────────────────────────────
+aiofiles>=23.2.0
+
+# ── Terminal UI ──────────────────────────────────────────────────────────────
+# Live progress bar, colored findings table, stats panel
+# Falls back to plain ANSI if not installed
+rich>=13.7.0
